@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour {
     private Vector3 movement;
     private Vector3 moveSpeed;
     private Camera mainCamera;
+    public GunManager gun;
 
 	// At the beginning call the Rigidbody on the Player and the camera for the ray
 	void Start ()
@@ -35,6 +36,16 @@ public class PlayerMovement : MonoBehaviour {
             Debug.DrawLine(cameraRay.origin, lookSpot, Color.yellow);
             //this makes the player game object rotate to look at the ray being cast
             transform.LookAt(new Vector3(lookSpot.x, transform.position.y, lookSpot.z));
+        }
+
+        if(Input.GetMouseButtonDown(0))
+        {
+            gun.isShooting = true;
+        }
+
+        if(Input.GetMouseButtonUp(0))
+        {
+            gun.isShooting = false;
         }
     }
 
