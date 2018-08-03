@@ -53,9 +53,11 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 298aff69e58773c4abb48673585381a2, type: 2}
   m_StaticBatchInfo:
@@ -68,6 +70,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -109,7 +112,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33a3f4c1e63721148b1b4c7ac98c9f50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDead: 0
+  enemySpeed: 2
+  player: {fileID: 4635101860343770, guid: 68cf762fcd2471849ac6b6fbae27383b, type: 2}
 --- !u!136 &136233238090847076
 CapsuleCollider:
   m_ObjectHideFlags: 1

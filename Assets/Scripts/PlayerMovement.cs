@@ -10,10 +10,14 @@ public class PlayerMovement : MonoBehaviour {
     private Vector3 moveSpeed;
     private Camera mainCamera;
     public GunManager gun;
+    public int playerHealth;
+    public bool isDead;
 
 	// At the beginning call the Rigidbody on the Player and the camera for the ray
 	void Start ()
     {
+        isDead = false;
+        playerHealth = 4;
         rigidBody = GetComponent<Rigidbody>();
         mainCamera = FindObjectOfType<Camera>();
     }
@@ -46,6 +50,11 @@ public class PlayerMovement : MonoBehaviour {
         if(Input.GetMouseButtonUp(0))
         {
             gun.isShooting = false;
+        }
+
+        if (playerHealth <= 0)
+        {
+            isDead = true;
         }
     }
 
