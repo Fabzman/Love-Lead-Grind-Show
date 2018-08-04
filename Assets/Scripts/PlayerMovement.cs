@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour {
     public GunManager gun;
     public int playerHealth;
     public bool isDead;
+    //public GameObject pause;
 
 	// At the beginning call the Rigidbody on the Player and the camera for the ray
 	void Start ()
@@ -33,6 +34,11 @@ public class PlayerMovement : MonoBehaviour {
         Plane ground = new Plane(Vector3.up, Vector3.zero);
         float rayLength;
 
+        if (Time.timeScale == 0)
+        {
+            return;
+        }
+
         if (ground.Raycast(cameraRay, out rayLength))
         {
             Vector3 lookSpot = cameraRay.GetPoint(rayLength);
@@ -42,7 +48,7 @@ public class PlayerMovement : MonoBehaviour {
             transform.LookAt(new Vector3(lookSpot.x, transform.position.y, lookSpot.z));
         }
 
-        if(Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
             gun.isShooting = true;
         }

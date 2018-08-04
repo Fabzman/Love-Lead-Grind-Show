@@ -5,12 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/Wrong Names/Love Lead Grind Show Start Screen.unity
-    guid: e43f426b0e887df43b30138f6781a859
+  - enabled: 1
+    path: Assets/Scenes/Lead Love Grind Show Start Screen.unity
+    guid: 57238293d39d76b479709a60b9fed5e8
   - enabled: 1
     path: Assets/Scenes/Lead Love Grind Show Stage 1.unity
     guid: 6bb4b30567fb17640b3f57e45b8432a8
-  - enabled: 1
-    path: Assets/Scenes/Lead Love Grind Show Start Screen.unity
-    guid: 9afe66c8f1210b54ab23d0fd855b5e8c

@@ -10,8 +10,8 @@ public class StartGame : MonoBehaviour {
         
     }
 
-    public void LoadStage (int Stage1)
+    public void LoadStage (int Stage)
     {
-        SceneManager.LoadScene(Stage1);
+        SceneManager.LoadScene(Stage);
     }
 }

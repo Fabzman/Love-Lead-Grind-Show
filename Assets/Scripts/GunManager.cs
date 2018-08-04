@@ -10,7 +10,6 @@ public class GunManager : MonoBehaviour {
     public float nextShot;
     public float shotTimer;
     public Transform barrelPoint;
-
 	// Use this for initialization
 	void Start ()
     {
