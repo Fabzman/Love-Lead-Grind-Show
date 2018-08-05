@@ -13,6 +13,7 @@ public class EnemySpawner : MonoBehaviour {
 
     private float currentSpawnTime = 0F;
     public GameObject player;
+    public GameObject waveOver;
     private PlayerMovement _playerMovement;
     public int maxSpawn;
     public int currentSpawn;
@@ -21,7 +22,8 @@ public class EnemySpawner : MonoBehaviour {
 	void Start ()
     {
         _playerMovement = GameObject.Find("Player").GetComponent<PlayerMovement>();
-	}
+        waveOver.gameObject.SetActive(false);
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -37,6 +39,12 @@ public class EnemySpawner : MonoBehaviour {
             {
                 Spawn();
             }
+        }
+
+        if (maxSpawn <= 0)
+        {
+            waveOver.gameObject.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 

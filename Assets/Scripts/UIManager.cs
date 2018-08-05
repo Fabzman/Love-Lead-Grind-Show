@@ -12,7 +12,6 @@ public class UIManager : MonoBehaviour {
     public static int enemyCount;
     public static int lifeCount;
 
-    //hate not understanding this
     //Score Text
     public Text scoreText;
     //Health Text

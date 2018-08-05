@@ -12,12 +12,14 @@ public class PlayerMovement : MonoBehaviour {
     public GunManager gun;
     public int playerHealth;
     public bool isDead;
+    public GameObject gameOver;
     //public GameObject pause;
 
 	// At the beginning call the Rigidbody on the Player and the camera for the ray
 	void Start ()
     {
         isDead = false;
+        gameOver.gameObject.SetActive(false);
         playerHealth = 4;
         rigidBody = GetComponent<Rigidbody>();
         mainCamera = FindObjectOfType<Camera>();
@@ -61,6 +63,8 @@ public class PlayerMovement : MonoBehaviour {
         if (playerHealth <= 0)
         {
             isDead = true;
+            gameOver.gameObject.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 
