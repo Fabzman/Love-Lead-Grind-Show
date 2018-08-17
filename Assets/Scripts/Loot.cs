@@ -4,13 +4,21 @@ using UnityEngine;
 
 public class Loot : MonoBehaviour {
 
+    private int lootValue;
+
+
 	// Use this for initialization
-	void Start () {
-		
+	void Start ()
+    {
+        lootValue = Random.Range(10, 50);
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Player")
+        {
+            other.GetComponent<PlayerMovement>().CashGrab(lootValue);
+            Destroy(gameObject);
+        }
+    }
 }

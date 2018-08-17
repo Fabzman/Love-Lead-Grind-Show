@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyManager : MonoBehaviour {
+public class Enemy : MonoBehaviour {
 
     private PlayerMovement _player;
     private EnemySpawner _spawn;
     public float enemySpeed;
     public Transform player;
+    public GameObject loot;
 
 	// Use this for initialization
 	void Start ()
@@ -31,10 +32,11 @@ public class EnemyManager : MonoBehaviour {
         if (other.tag == "Shot")
         {
             Destroy(GameObject.FindGameObjectWithTag("Shot"));
-            Destroy(gameObject);
             _spawn.currentSpawn --;
             _spawn.maxSpawn--;
             UIManager.enemyCount+=100;
+            Instantiate(loot, transform.position, transform.rotation);
+            Destroy(gameObject);
         }
 
         if (other.tag == "Player")

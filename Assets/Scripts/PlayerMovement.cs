@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour {
     public int playerHealth;
     public bool isDead;
     public GameObject gameOver;
+    public int cash;
     //public GameObject pause;
 
 	// At the beginning call the Rigidbody on the Player and the camera for the ray
@@ -72,5 +73,10 @@ public class PlayerMovement : MonoBehaviour {
     void FixedUpdate()
     {
         rigidBody.velocity = moveSpeed;
+    }
+
+    public void CashGrab(int lootValue)
+    {
+        cash += lootValue;
     }
 }
