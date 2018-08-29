@@ -19,6 +19,7 @@ public class Loot : MonoBehaviour {
         {
             other.GetComponent<PlayerMovement>().CashGrab(lootValue);
             Destroy(gameObject);
+            UIManager.cashCount += lootValue;
         }
     }
 }
