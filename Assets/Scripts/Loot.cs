@@ -10,7 +10,7 @@ public class Loot : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-        lootValue = Random.Range(10, 50);
+        lootValue = Random.Range(1, 10);
 	}
 	
     void OnTriggerEnter(Collider other)

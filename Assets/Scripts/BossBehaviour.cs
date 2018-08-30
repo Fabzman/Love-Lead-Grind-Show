@@ -5,7 +5,7 @@ using UnityEngine;
 public class BossBehaviour : MonoBehaviour {
 
     private PlayerMovement _player;
-    private EnemySpawner _spawn;
+    private BossSpawner _spawn;
     public float enemySpeed;
     public int bossHealth;
     public bool bossDead;
@@ -16,7 +16,7 @@ public class BossBehaviour : MonoBehaviour {
     void Start()
     {
         _player = GameObject.Find("Player").GetComponent<PlayerMovement>();
-        _spawn = GameObject.Find("EnemySpawner").GetComponent<EnemySpawner>();
+        _spawn = GameObject.Find("EnemySpawner").GetComponent<BossSpawner>();
         _spawn.currentSpawn++;
         player = GameObject.Find("Player").transform;
     }
@@ -36,7 +36,17 @@ public class BossBehaviour : MonoBehaviour {
             bossHealth --;
             Destroy(GameObject.FindGameObjectWithTag("Shot"));
             UIManager.bossHealth --;
-            
+
+            if (bossHealth <= 65)
+            {
+                enemySpeed = 5;
+            }
+
+            if (bossHealth <= 25)
+            {
+                enemySpeed = 8;
+            }
+
             if (bossHealth <= 0)
             {
                 bossDead = true;
