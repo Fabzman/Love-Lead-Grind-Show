@@ -12,7 +12,14 @@ public class StartGame : MonoBehaviour {
 
     public void LoadStage (int Stage)
     {
+        //GameManager.instance.Restart();
         SceneManager.LoadScene(Stage);
+    }
+
+    public void RestartGame()
+    {
+        GameManager.instance.Restart();
+        LoadStage(1);
     }
 
     public void QuitGame ()

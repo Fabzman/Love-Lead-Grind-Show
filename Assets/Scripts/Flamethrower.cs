@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GunManager : MonoBehaviour {
+public class Flamethrower : MonoBehaviour
+{
 
     public bool isShooting;
-    public BulletManager shot;
+    public Flameshot shot;
     public float bulletSpeed;
     public float nextShot;
     public float shotTimer;
@@ -15,7 +16,7 @@ public class GunManager : MonoBehaviour {
     //public Transform barrelPoint4;
     //public Transform barrelPoint5;
     // Use this for initialization
-    void Start ()
+    void Start()
     {
         if (name == "Machine Gun" && !Score.instance.machineGun)
             gameObject.SetActive(false);
@@ -26,18 +27,18 @@ public class GunManager : MonoBehaviour {
         else if (name == "Gun" && !Score.instance.gun)
             gameObject.SetActive(false);
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update()
     {
-		if (isShooting)
+        if (isShooting)
         {
             shotTimer -= Time.deltaTime;
 
             if (shotTimer <= 0)
             {
                 shotTimer = nextShot;
-                BulletManager newBullet = Instantiate(shot, barrelPoint.position, barrelPoint.rotation) as BulletManager;
+                Flameshot newBullet = Instantiate(shot, barrelPoint.position, barrelPoint.rotation) as Flameshot;
                 //BulletManager newBullet2 = Instantiate(shot, barrelPoint2.position, barrelPoint2.rotation) as BulletManager;
                 //BulletManager newBullet3 = Instantiate(shot, barrelPoint3.position, barrelPoint3.rotation) as BulletManager;
                 //BulletManager newBullet4 = Instantiate(shot, barrelPoint4.position, barrelPoint4.rotation) as BulletManager;
@@ -50,5 +51,5 @@ public class GunManager : MonoBehaviour {
         {
             shotTimer = 0;
         }
-	}
+    }
 }

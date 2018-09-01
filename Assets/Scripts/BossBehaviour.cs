@@ -11,6 +11,7 @@ public class BossBehaviour : MonoBehaviour {
     public bool bossDead;
     public Transform player;
     public GameObject loot;
+    public int scoreBonus = 5000;
 
     // Use this for initialization
     void Start()
@@ -35,7 +36,7 @@ public class BossBehaviour : MonoBehaviour {
         {
             bossHealth --;
             Destroy(GameObject.FindGameObjectWithTag("Shot"));
-            UIManager.bossHealth --;
+            UIManager.instance.UpdateBoss(bossHealth);
 
             if (bossHealth <= 65)
             {
@@ -50,12 +51,14 @@ public class BossBehaviour : MonoBehaviour {
             if (bossHealth <= 0)
             {
                 bossDead = true;
+                bossHealth = 0;
 
                 if (bossDead)
                 {
                     _spawn.currentSpawn--;
                     _spawn.maxSpawn--;
-                    UIManager.enemyCount += 5000;
+                    // UIManager.enemyCount += 5000;
+                    GameManager.instance.IncrementScore(scoreBonus);
                     Instantiate(loot, transform.position, transform.rotation);
                     Destroy(gameObject);
                 }
@@ -65,9 +68,10 @@ public class BossBehaviour : MonoBehaviour {
 
         if (other.tag == "Player")
         {
+            GameManager.instance.PlayerHit();
             //Destroy(GameObject.FindGameObjectWithTag("Player"));
-            _player.playerHealth--;
-            UIManager.lifeCount--;
+            //_player.playerHealth--;
+            //UIManager.lifeCount--;
         }
 
         else if (other.tag == "Boundary")

@@ -70,6 +70,16 @@ public class EnemySpawner : MonoBehaviour {
             }
         }
 
+        if (currentSpawn <= 0)
+        {
+            currentSpawn = 0;
+        }
+
+        if (maxSpawn <= 0)
+        {
+            maxSpawn = 0;
+        }
+
         if (maxSpawn <= 0)
         {
             countDown--;

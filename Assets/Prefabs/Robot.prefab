@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114148973128204078}
   m_Layer: 0
   m_Name: Robot
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,5 +122,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpeed: 1
-  player: {fileID: 4635101860343770, guid: 68cf762fcd2471849ac6b6fbae27383b, type: 2}
+  player: {fileID: 4885498251989244, guid: 68cf762fcd2471849ac6b6fbae27383b, type: 2}
   loot: {fileID: 1377154557929152, guid: f27ba320fb209994289d4684aa767455, type: 2}
+  scoreBonus: 100

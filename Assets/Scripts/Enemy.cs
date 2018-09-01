@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour {
     public float enemySpeed;
     public Transform player;
     public GameObject loot;
+    public int scoreBonus = 100;
 
 	// Use this for initialization
 	void Start ()
@@ -34,16 +35,18 @@ public class Enemy : MonoBehaviour {
             Destroy(GameObject.FindGameObjectWithTag("Shot"));
             _spawn.currentSpawn --;
             _spawn.maxSpawn--;
-            UIManager.enemyCount+=100;
+            GameManager.instance.IncrementScore(scoreBonus);
+            //UIManager.enemyCount+=100;
             Instantiate(loot, transform.position, transform.rotation);
             Destroy(gameObject);
         }
 
         if (other.tag == "Player")
         {
+            GameManager.instance.PlayerHit();
             //Destroy(GameObject.FindGameObjectWithTag("Player"));
-            _player.playerHealth --;
-            UIManager.lifeCount--;
+            //_player.playerHealth --;
+            //UIManager.lifeCount--;
         }
 
         else if (other.tag == "Boundary")

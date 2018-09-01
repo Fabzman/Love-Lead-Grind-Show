@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 54649131016708410}
   m_Layer: 0
   m_Name: Boss
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112,8 +112,9 @@ MonoBehaviour:
   enemySpeed: 3
   bossHealth: 100
   bossDead: 0
-  player: {fileID: 4635101860343770, guid: 68cf762fcd2471849ac6b6fbae27383b, type: 2}
+  player: {fileID: 4885498251989244, guid: 68cf762fcd2471849ac6b6fbae27383b, type: 2}
   loot: {fileID: 1377154557929152, guid: f27ba320fb209994289d4684aa767455, type: 2}
+  scoreBonus: 5000
 --- !u!135 &135498374579865704
 SphereCollider:
   m_ObjectHideFlags: 1

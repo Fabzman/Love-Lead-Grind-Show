@@ -10,7 +10,11 @@ public class PlayerMovement : MonoBehaviour {
     private Vector3 moveSpeed;
     private Camera mainCamera;
     public GunManager gun;
-    public int playerHealth;
+    public GunManager machineGun;
+    public ShotGun shotGun;
+    public Flamethrower flameThrower;
+    //public int playerHealth;
+    //private GameManager gameManager;
     public bool isDead;
     public GameObject gameOver;
     public int cash;
@@ -21,9 +25,10 @@ public class PlayerMovement : MonoBehaviour {
     {
         isDead = false;
         gameOver.gameObject.SetActive(false);
-        playerHealth = 4;
+        //playerHealth = 4;
         rigidBody = GetComponent<Rigidbody>();
         mainCamera = FindObjectOfType<Camera>();
+        //gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
 	
 	void Update ()
@@ -54,14 +59,20 @@ public class PlayerMovement : MonoBehaviour {
         if (Input.GetMouseButtonDown(0))
         {
             gun.isShooting = true;
+            machineGun.isShooting = true;
+            shotGun.isShooting = true;
+            flameThrower.isShooting = true;
         }
 
         if(Input.GetMouseButtonUp(0))
         {
             gun.isShooting = false;
+            machineGun.isShooting = false;
+            shotGun.isShooting = false;
+            flameThrower.isShooting = false;
         }
 
-        if (playerHealth <= 0)
+        if (Score.instance.health <= 0)
         {
             isDead = true;
             gameOver.gameObject.SetActive(true);
