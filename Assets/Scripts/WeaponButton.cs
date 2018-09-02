@@ -37,12 +37,12 @@ public class WeaponButton : MonoBehaviour {
             Powerup1 = true;
         }
 
-        if (Score.instance.cash >= 200)
+        if (Score.instance.cash >= 300)
         {
             Powerup2 = true;
         }
 
-        if (Score.instance.cash >= 200)
+        if (Score.instance.cash >= 400)
         {
             Powerup3 = true;
         }
@@ -77,7 +77,7 @@ public void Shotgun()
             //machineGun.gameObject.SetActive(false);
             //flameThrower.gameObject.SetActive(false);
             //shotGun.gameObject.SetActive(true);
-            Score.instance.cash -= 200;
+            Score.instance.cash -= 300;
         }
 }
 
@@ -93,7 +93,7 @@ public void FlameThrower()
             //machineGun.gameObject.SetActive(false);
             //shotGun.gameObject.SetActive(false);
             //flameThrower.gameObject.SetActive(true);
-            Score.instance.cash -= 200;
+            Score.instance.cash -= 400;
         }
 }
 

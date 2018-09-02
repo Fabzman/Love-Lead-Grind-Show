@@ -797,7 +797,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Flame Thrower
+  m_Text: Flame Thrower $400
 --- !u!222 &249506419
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1928,7 +1928,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Shotgun
+  m_Text: Shotgun $300
 --- !u!222 &743486730
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2076,7 +2076,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Machine Gun
+  m_Text: Machine Gun $200
 --- !u!222 &850199471
 CanvasRenderer:
   m_ObjectHideFlags: 0
